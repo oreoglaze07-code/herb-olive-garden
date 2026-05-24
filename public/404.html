@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      var query = search.slice(1).split('&').filter(Boolean);
+      query.push('p=' + encodeURIComponent(path.slice(1)));
+      window.location.replace(
+        '/?/' + query.join('&') + hash
+      );
+    </script>
+  </head>
+</html>
